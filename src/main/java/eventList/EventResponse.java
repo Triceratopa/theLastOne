@@ -1,5 +1,6 @@
 package eventList;
 
+import auth.AppUser;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +15,7 @@ public class EventResponse {
     private String location;
     private String date;
     private int capacity;
+    private AppUser organizer;
+
 
 }

@@ -1,13 +1,15 @@
 package eventList;
 
 import auth.AppUser;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -20,7 +22,10 @@ public class Event {
     private String name;
     private String description;
     private String location;
-    private String date;
+    private LocalDate date;
     private int capacity;
+    @ManyToOne
     private AppUser organizer;
+    @OneToMany
+    private List<AppUser> attend = new ArrayList<>();
 }
