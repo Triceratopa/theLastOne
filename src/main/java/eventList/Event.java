@@ -17,7 +17,7 @@ import java.util.List;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private long id;
 
     private String name;
     private String description;
@@ -27,5 +27,5 @@ public class Event {
     @ManyToOne
     private AppUser organizer;
     @OneToMany
-    private List<AppUser> attend = new ArrayList<>();
+    private List<AppUser> participants = new ArrayList<>();
 }
